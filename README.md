@@ -1,200 +1,176 @@
-# 🌦️ Hyperlocal Weather Prediction Using AI
+# 🌍 HyperWeather - Advanced Hyperlocal Weather & AQI Prediction
 
-An AI-powered weather forecasting system that delivers accurate, real-time, location-specific weather predictions using Machine Learning and live weather data.
+A professional, modern weather prediction application with hyperlocal AQI forecasting, interactive visualizations, and real-time data.
 
----
+## ✨ Features
 
-## 📌 Overview
+### 🎯 Core Features
+- **Hyperlocal Weather Prediction**: Get detailed weather forecasts for your exact location
+- **AQI Prediction**: AI-powered Air Quality Index predictions using Machine Learning
+- **Real-Time Weather Data**: Live weather conditions from OpenWeatherMap API
+- **Interactive Map**: Leaflet-powered map with location tracking
 
-Traditional weather forecasting systems often provide predictions for large regions, which may not accurately reflect weather conditions at a specific location. This project addresses that challenge by building a Hyperlocal Weather Prediction System that leverages Artificial Intelligence and Machine Learning to generate precise forecasts for small geographic areas.
+### 🚀 Advanced Features
+- **7-Day Forecast**: Extended weather predictions for the next week
+- **Hyperlocal Nearby Locations**: Check AQI for 4 nearby areas (N/E, N/W, S/E, S/W)
+- **Interactive Charts**:
+  - Temperature trend graphs
+  - AQI distribution analysis
+- **Health Recommendations**: AQI-based health alerts and activity suggestions
+- **Geolocation Support**: One-click location detection
+- **Responsive Design**: Works seamlessly on mobile, tablet, and desktop
 
-The system combines real-time weather data, historical weather records, and predictive models to forecast key weather parameters such as temperature, humidity, and rainfall.
+### 🎨 UI/UX Enhancements
+- Modern gradient design with professional color scheme
+- Card-based layout for easy information scanning
+- Smooth animations and transitions
+- Icon-rich interface for quick visual understanding
+- Accessible and clean typography
+- Real-time datetime display
 
----
+## 📊 AQI Health Categories
 
-## 🎯 Objectives
+| Category | Range | Status | Recommendation |
+|----------|-------|--------|-----------------|
+| Good | 0-50 | ✅ Safe | Go outside! |
+| Satisfactory | 51-100 | ⚠️ Caution | Sensitive groups limit outdoors |
+| Moderately Polluted | 101-200 | ⚠️ Poor | Reduce outdoor activities |
+| Poor | 201-300 | 🚫 Hazardous | Avoid outdoors |
+| Very Poor | 301-500 | 🚨 Emergency | Stay indoors |
 
-- Provide hyperlocal weather forecasts for specific locations.
-- Improve prediction accuracy using Machine Learning techniques.
-- Integrate real-time weather data through APIs.
-- Visualize weather trends using interactive charts and graphs.
-- Create a user-friendly weather prediction platform.
+## 🛠️ Technology Stack
 
----
+- **Backend**: Flask (Python)
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Data Visualization**: Chart.js
+- **Mapping**: Leaflet.js
+- **Weather API**: OpenWeatherMap
+- **Geocoding**: Nominatim (OpenStreetMap)
+- **ML Model**: Scikit-learn (Random Forest)
+- **Icons**: Font Awesome
 
-## 🚀 Features
+## 📦 Installation
 
-✅ Real-time weather data integration
+### Prerequisites
+- Python 3.8+
+- pip (Python package manager)
 
-✅ Hyperlocal weather predictions
+### Setup Steps
 
-✅ Temperature forecasting
+1. **Clone or download the project**
+   ```bash
+   cd weather_project
+   ```
 
-✅ Humidity forecasting
+2. **Install dependencies**
+   ```bash
+   pip install flask numpy scikit-learn joblib requests geopy
+   ```
 
-✅ Rainfall prediction
+3. **Train the model** (if needed)
+   ```bash
+   python train_model.py
+   ```
 
-✅ Machine Learning-powered analytics
+4. **Run the application**
+   ```bash
+   python app.py
+   ```
 
-✅ Data visualization and dashboards
+5. **Open in browser**
+   ```
+   http://127.0.0.1:5000
+   ```
 
-✅ Responsive and user-friendly interface
+## 🚀 Usage
 
----
+### Manual Location Entry
+1. Enter Area, City, and State details
+2. Select a date (within 5 days for best accuracy)
+3. Click "Get Prediction"
 
-## 🧠 Machine Learning Models
+### Geolocation
+1. Click "📍 Use My Location"
+2. Allow browser location access
+3. Select a future date
+4. Click "Get Prediction"
 
-The project utilizes:
+### Interpreting Results
+- **Location Details**: Shows exact area, city, state
+- **Live Weather**: Current temperature, humidity, wind speed, cloud cover
+- **AQI Prediction**: AI-predicted AQI category with health recommendations
+- **7-Day Forecast**: Weather predictions for the next week
+- **Nearby Locations**: Check AQI in nearby areas for hyperlocal insights
+- **Charts**: Visual representation of temperature trends and AQI distribution
 
-- Long Short-Term Memory (LSTM) Networks
-- Regression Models
-- Time-Series Analysis Techniques
+## 📁 Project Structure
 
-These models analyze historical and real-time weather data to identify patterns and predict future weather conditions.
-
----
-
-## 🏗️ System Architecture
-
-1. Data Collection
-   - Weather APIs
-   - Historical datasets
-
-2. Data Preprocessing
-   - Data cleaning
-   - Missing value handling
-   - Normalization
-
-3. Model Training
-   - LSTM Networks
-   - Regression Algorithms
-
-4. Prediction Engine
-   - Temperature Prediction
-   - Humidity Prediction
-   - Rainfall Prediction
-
-5. Visualization Dashboard
-   - Charts
-   - Graphs
-   - Weather Insights
-
----
-
-## 🛠️ Technologies Used
-
-### Programming Language
-- Python
-
-### Libraries
-- Pandas
-- NumPy
-- Scikit-learn
-- TensorFlow / Keras
-- Matplotlib
-
-### Database
-- SQLite / CSV
-
-### Tools
-- VS Code
-- OpenWeatherMap API
-
----
-
-## 📊 Expected Outcomes
-
-- Accurate and reliable weather forecasts
-- Better decision-making for users
-- Improved forecasting performance
-- Real-time weather updates
-- Interactive data visualization
-
----
-
-## 📂 Project Structure
-
-```text
-Hyperlocal-Weather-Prediction/
-│
-├── data/
-├── models/
-├── notebooks/
+```
+weather_project/
+├── app.py                 # Main Flask application
+├── train_model.py         # ML model training script
+├── weather.csv           # Training dataset
+├── model.pkl             # Trained ML model
+├── scaler.pkl            # Feature scaler
+├── encoders.pkl          # Label encoders
 ├── static/
+│   └── style.css         # Professional styling
 ├── templates/
-├── app.py
-├── requirements.txt
-├── README.md
-└── weather_model.py
+│   └── index.html        # Modern UI template
+└── README.md             # Documentation
 ```
 
----
+## 🔧 Configuration
 
-## ⚙️ Installation
+### API Key
+The app uses OpenWeatherMap's free tier API. To use your own API key:
 
-### Clone the Repository
+1. Sign up at [openweathermap.org](https://openweathermap.org/api)
+2. Get your free API key
+3. Replace `API_KEY` in `app.py`
 
-```bash
-git clone https://github.com/yourusername/hyperlocal-weather-prediction.git
-```
+### Debug Mode
+- **Development**: `debug=True` (auto-reload on changes)
+- **Production**: `debug=False` (disable in `app.py`)
 
-### Navigate to the Project
+## 📊 Data Sources
 
-```bash
-cd hyperlocal-weather-prediction
-```
+- **Weather Data**: OpenWeatherMap API
+- **AQI Data**: OpenWeatherMap Air Pollution API
+- **Geocoding**: Nominatim (OpenStreetMap)
+- **ML Model**: Random Forest Classifier trained on `weather.csv`
 
-### Install Dependencies
+## 🎯 Future Enhancements
 
-```bash
-pip install -r requirements.txt
-```
+- [ ] Historical AQI trends
+- [ ] Hourly AQI updates
+- [ ] Pollution source mapping
+- [ ] Health alert notifications
+- [ ] Export data as PDF/CSV
+- [ ] Multiple city tracking
+- [ ] Dark mode toggle
+- [ ] Multilingual support
+- [ ] Progressive Web App (PWA)
 
-### Run the Application
+## ⚠️ Limitations
 
-```bash
-python app.py
-```
+- Weather forecast accuracy: Up to 5 days
+- AQI predictions based on trained model (may vary)
+- API rate limits: Limited free tier requests
+- Geolocation requires browser permission
 
----
+## 🤝 Contributing
 
-## 📈 Future Enhancements
+Feel free to fork, modify, and improve this project!
 
-- IoT sensor integration
-- Severe weather alerts
-- Mobile application support
-- Air Quality Index (AQI) prediction
-- Wind speed and pressure forecasting
-- Advanced deep learning models
+## 📝 License
 
----
+Open source project - Free to use and modify
 
-## 🌍 Applications
+## 📧 Support
 
-- Agriculture
-- Disaster Management
-- Smart Cities
-- Transportation
-- Travel Planning
-- Daily Weather Monitoring
-
----
-
-## 👥 Team Members
-
-- Diya Desale
-- Avani Mittal
-- Shreya Dilipkumar
-- Parvathikrishna
+For issues, suggestions, or feedback, feel free to reach out.
 
 ---
 
-## 🎓 Academic Project
-
-Developed as a Mini Project for the Department of Computer Science & Engineering, Amity University Mumbai (2025–26).
-
----
-
-## 📜 License
-
-This project is developed for educational and research purposes.
+**Made with ❤️ for weather enthusiasts** | Last Updated: 2026
